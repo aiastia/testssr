@@ -61,7 +61,7 @@ RUN apk --no-cache add \
 
 WORKDIR /root/shadowsocks
 
-CMD sed -i "s|NODE_ID = 1|NODE_ID = ${NODE_ID}|"                               /root/shadowsocks/userapiconfig.py && \
+CMD sed -i "s|NODE_ID = 0|NODE_ID = ${NODE_ID}|"                               /root/shadowsocks/userapiconfig.py && \
     sed -i "s|SPEEDTEST = 6|SPEEDTEST = ${SPEEDTEST}|"                         /root/shadowsocks/userapiconfig.py && \
     sed -i "s|CLOUDSAFE = 1|CLOUDSAFE = ${CLOUDSAFE}|"                         /root/shadowsocks/userapiconfig.py && \
     sed -i "s|AUTOEXEC = 0|AUTOEXEC = ${AUTOEXEC}|"                            /root/shadowsocks/userapiconfig.py && \
