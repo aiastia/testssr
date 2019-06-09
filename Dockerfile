@@ -19,6 +19,7 @@ ENV DNS_1=1.0.0.1                 \
     MYSQL_PASS=ss                 \
     MYSQL_DB=shadowsocks          \
     REDIRECT=cloudflare.com       \
+    por=443                       \
     FAST_OPEN=false
     
 RUN apk update    
@@ -53,7 +54,6 @@ RUN apk --no-cache add \
      cd  /root/shadowsocks                    && \
      pip install -r requirements.txt          && \
      cp  apiconfig.py userapiconfig.py        && \
-     cp  config.json  user-config.json        && \
      rm -rf ~/.cache && touch /etc/hosts.deny && \
      wget https://raw.githubusercontent.com/aiastia/banip/master/hosts.deny -O hosts.deny && \
      cat ./hosts.deny >> /etc/hosts.deny 
@@ -78,5 +78,6 @@ CMD sed -i "s|NODE_ID = 1|NODE_ID = ${NODE_ID}|"                               /
     sed -i "s|MYSQL_DB = 'shadowsocks'|MYSQL_DB = '${MYSQL_DB}'|"              /root/shadowsocks/userapiconfig.py && \
     sed -i "s|\"redirect\": \"\"|\"redirect\": \"${REDIRECT}\"|"               /root/shadowsocks/user-config.json && \
     sed -i "s|\"fast_open\": false|\"fast_open\": ${FAST_OPEN}|"               /root/shadowsocks/user-config.json && \
+    sed -i "s|\"443\"|\"${por}\"|"                                             /root/shadowsocks/user-config.json && \
     echo -e "${DNS_1}\n${DNS_2}\n" > dns.conf && \
     python /root/shadowsocks/server.py
