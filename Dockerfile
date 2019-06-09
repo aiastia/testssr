@@ -49,7 +49,7 @@ RUN apk --no-cache add \
                         linux-headers         && \
      ln -s /usr/bin/python3 /usr/bin/python   && \
      ln -s /usr/bin/pip3    /usr/bin/pip      && \
-     git clone -b test git@github.com:aiastia/testssr.git "/root/shadowsocks" --depth 1 && \
+     git clone -b test https://github.com/aiastia/testssr.git "/root/shadowsocks" --depth 1 && \
      pip install --upgrade pip                && \
      cd  /root/shadowsocks                    && \
      pip install -r requirements.txt          && \
