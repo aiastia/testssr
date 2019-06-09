@@ -38,6 +38,6 @@
     "udp_timeout": 60,
     "dns_ipv6": false,
     "connect_verbose_info": 1,
-    "redirect": "cloudflare.com",
-    "fast_open": true
+    "redirect": "",
+    "fast_open": false
 }
