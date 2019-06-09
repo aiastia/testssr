@@ -56,7 +56,8 @@ RUN apk --no-cache add \
      cp  apiconfig.py userapiconfig.py        && \
      rm -rf ~/.cache && touch /etc/hosts.deny && \
      wget https://raw.githubusercontent.com/aiastia/banip/master/hosts.deny -O hosts.deny && \
-     cat ./hosts.deny >> /etc/hosts.deny 
+     cat ./hosts.deny >> /etc/hosts.deny &&\
+     ls
 
 
 WORKDIR /root/shadowsocks
