@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aiastia</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta content="Bodo - Simple One Page Personal" name="description">
+<meta content="BdgPixel" name="author">
+<!--Fav-->
+<link href="https://raw.githubusercontent.com/aiastia/web/master/images/logo-big.png" rel="shortcut icon">
+
+<!--styles-->
+<link href="https://cdn.jsdelivr.net/gh/aiastia/web/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/aiastia/web/css/owl.carousel.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/aiastia/web/css/owl.theme.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/aiastia/web/css/magnific-popup.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/aiastia/web/css/style.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/aiastia/web/css/responsive.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/aiastia/web/css/test.css" rel="stylesheet">
+
+
+<!--fonts google-->
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+
+<!--[if lt IE 9]>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/aiastia/web/js/html5shiv.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--PRELOADER-->
+<div id="preloader">
+  <div id="status">
+	<img alt="logo" src="https://raw.githubusercontent.com/aiastia/web/master/images/logo-big.png">
+  </div>
+</div>
+<!--/.PRELOADER END-->
+
+<!--HEADER -->
+<div class="header">
+  <div class="for-sticky">
+	<!--LOGO-->
+	<div class="col-md-2 col-xs-6 logo">
+	  <a href="index.html"><img alt="logo" class="logo-nav" src="https://raw.githubusercontent.com/aiastia/web/master/images/logo.png"></a>
+	</div>
+	<!--/.LOGO END-->
+  </div>
+  <div class="menu-wrap">
+	<nav class="menu">
+	  <div class="menu-list">
+		<a data-scroll="" href="#home" class="active">
+		  <span>Home</span>
+
+				</script>
+		</a>
+
+	  </div>
+	</nav>
+	<button class="close-button" id="close-button">Close Menu</button>
+  </div>
+  <button class="menu-button" id="open-button">
+	<span></span>
+	<span></span>
+	<span></span>
+  </button><!--/.for-sticky-->
+</div>
+<!--/.HEADER END-->
+
+<!--CONTENT WRAP-->
+<div class="content-wrap">
+  <!--CONTENT-->
+  <div class="content">
+	<!--HOME-->
+	<section id="home">
+	  <div class="container">
+		<div class="row">
+		  <div class="wrap-hero-content">
+			  <div class="hero-content">
+				<!-- Search Google -->
+					<center>
+					<form method=get action="http://www.google.com/search">
+					<table bgcolor="#FFFFFF"><tr><td>
+					<a href="http://www.google.com/intl/zh-CN/">
+					</center>
+					<center>
+					<br><img src="https://source.unsplash.com/random/500x200" border="0" alt="Google" align="absmiddle"></a></br>
+					<br>
+					<span class="search"><input type=text name=q size=31 maxlength=255 value=""></span>
+					<input type=hidden name=ie value=utf-8>
+					<input type=hidden name=oe value=utf-8>
+					<input type=hidden name=hl value=zh-CN>
+					<span class="button"><input type=submit name=btnG value="Google 搜索"></br></span>
+					</td></tr></table>
+					</form>
+					</center>
+					<!-- Search Google -->
+				<div id="poem_ele"></div>
+				<div id="info_ele"></div>
+				<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+				<script type="text/javascript">
+				jinrishici.load(function(result) {
+					var poem = document.querySelector("#poem_ele") // 选取 <div id ="poem_ele">
+					var info = document.querySelector("#info_ele") // 选取 <div id  ="info_ele">
+					poem.innerHTML = result.data.content // poem_ele 的内容为诗词内容
+					info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》' // info_ele 的内容为 【朝代】作者 《诗词名》
+				});
+						</script>
+							</div>
+					</div>
+					<div class="mouse-icon margin-20">
+					<div class="scroll"></div>
+					</div>
+					</div>
+					</div>
+					</section>
+					<!--/.HOME END-->
+
+
+
+	
+	<!--FOOTER-->
+	
+	  <div class="footer-top">
+		<ul class="socials">
+		  <li class="facebook">
+			<a href="#" data-hover="Facebook">Facebook</a>
+		  </li>
+		  <li class="twitter">
+			<a href="#" data-hover="Twitter">Twitter</a>
+		  </li>
+		  <li class="gplus">
+			<a href="#" data-hover="Google +">Google +</a>
+		  </li>
+		</ul>
+	  </div>
+
+
+	</footer>
+	<!--/.FOOTER-END-->
+
+  <!--/.CONTENT END-->
+  </div>
+<!--/.CONTENT-WRAP END-->
+</div>
+	
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/jquery.appear.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/classie.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/owl.carousel.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/masonry.pkgd.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/masonry.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/smooth-scroll.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/typed.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/gh/aiastia/web/js/main.js" type="text/javascript"></script>
+</body>
+</html>
+				
