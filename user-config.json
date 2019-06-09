@@ -23,7 +23,7 @@
         "obfs": "tls1.2_ticket_auth_compatible",
         "obfs_param": ""
     },
-    "9379": {
+    "443": {
         "passwd": "pass",
         "method": "aes-256-ctr",
         "protocol": "auth_aes128_md5",
