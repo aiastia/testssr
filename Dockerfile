@@ -67,7 +67,7 @@ CMD sed -i "s|NODE_ID = 1|NODE_ID = ${NODE_ID}|"                               /
     sed -i "s|AUTOEXEC = 0|AUTOEXEC = ${AUTOEXEC}|"                            /root/shadowsocks/userapiconfig.py && \
     sed -i "s|ANTISSATTACK = 0|ANTISSATTACK = ${ANTISSATTACK}|"                /root/shadowsocks/userapiconfig.py && \
     sed -i "s|MU_SUFFIX = \"zhaoj.in\"|MU_SUFFIX = \"${MU_SUFFIX}\"|"              /root/shadowsocks/userapiconfig.py && \
-    sed -i "s|MU_REGEX = "%5m%id.%suffix"|MU_REGEX = \"${MU_REGEX}\"|"           /root/shadowsocks/userapiconfig.py && \
+    sed -i "s|MU_REGEX = \"%5m%id.%suffix\"|MU_REGEX = \"${MU_REGEX}\"|"           /root/shadowsocks/userapiconfig.py && \
     sed -i "s|API_INTERFACE = \"modwebapi\"|API_INTERFACE = \"${API_INTERFACE}\"|" /root/shadowsocks/userapiconfig.py && \
     sed -i "s|WEBAPI_URL = \"https://zhaoj.in\"|WEBAPI_URL = \"${WEBAPI_URL}\"|"   /root/shadowsocks/userapiconfig.py && \
     sed -i "s|WEBAPI_TOKEN = \"glzjin\"|WEBAPI_TOKEN = \"${WEBAPI_TOKEN}\"|"       /root/shadowsocks/userapiconfig.py && \
