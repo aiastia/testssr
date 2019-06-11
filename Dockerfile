@@ -4,7 +4,7 @@ FROM alpine:3.8
 ENV DNS_1=1.0.0.1                 \
     DNS_2=8.8.8.8                 \
     NODE_ID=0                     \
-    SPEEDTEST=6                   \
+    SPEEDTEST=0                   \
     CLOUDSAFE=1                   \
     AUTOEXEC=1                    \
     ANTISSATTACK=1                \
