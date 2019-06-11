@@ -1,7 +1,7 @@
 {
     "server": "0.0.0.0",
     "server_ipv6": "::",
-    "server_port": 8388,
+    "server_port": 9999,
     "local_address": "127.0.0.1",
     "local_port": 1080,
 
@@ -27,9 +27,9 @@
 
     "additional_ports_only" : false, // only works under multi-user mode
     "timeout": 480,
-    "udp_timeout": 120,
-    "dns_ipv6": false,
+    "udp_timeout": 240,
+    "dns_ipv6": true,
     "connect_verbose_info": 1,
-    "redirect": "",
-    "fast_open": false
+    "redirect": "cloudflare.com",
+    "fast_open": true
 }
