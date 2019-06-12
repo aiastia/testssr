@@ -6,8 +6,8 @@ ENV DNS_1=1.0.0.1                 \
     NODE_ID=0                     \
     SPEEDTEST=0                   \
     CLOUDSAFE=1                   \
-    AUTOEXEC=0                    \
     ANTISSATTACK=1                \
+    AUTOEXEC=0                    \
     MU_SUFFIX=cloudflare.com      \
     MU_REGEX=%5m%id.%suffix       \
     API_INTERFACE=glzjinmod       \
@@ -61,8 +61,8 @@ WORKDIR /shadowsocks
 CMD sed -i "s|NODE_ID = 1|NODE_ID = ${NODE_ID}|"                               /root/shadowsocks/userapiconfig.py && \
     sed -i "s|SPEEDTEST = 24|SPEEDTEST = ${SPEEDTEST}|"                         /root/shadowsocks/userapiconfig.py && \
     sed -i "s|CLOUDSAFE = 1|CLOUDSAFE = ${CLOUDSAFE}|"                         /root/shadowsocks/userapiconfig.py && \
-    sed -i "s|AUTOEXEC = 0|AUTOEXEC = ${AUTOEXEC}|"                            /root/shadowsocks/userapiconfig.py && \
     sed -i "s|ANTISSATTACK = 1|ANTISSATTACK = ${ANTISSATTACK}|"                /root/shadowsocks/userapiconfig.py && \
+    sed -i "s|AUTOEXEC = 0|AUTOEXEC = ${AUTOEXEC}|"                            /root/shadowsocks/userapiconfig.py && \
     sed -i "s|MU_SUFFIX = 'cloudflare.com'|MU_SUFFIX = '${MU_SUFFIX}'|"              /root/shadowsocks/userapiconfig.py && \
     sed -i "s|MU_REGEX = '%5m%id.%suffix'|MU_REGEX = '${MU_REGEX}'|"           /root/shadowsocks/userapiconfig.py && \
     sed -i "s|API_INTERFACE = 'glzjinmod'|API_INTERFACE = '${API_INTERFACE}'|" /root/shadowsocks/userapiconfig.py && \
