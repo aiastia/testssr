@@ -20,6 +20,7 @@ ENV DNS_1=1.0.0.1                 \
     MYSQL_DB=shadowsocks          \
     REDIRECT=cloudflare.com       \
     por=443                       \
+    dns_ipv6=false                \
     FAST_OPEN=true
     
 RUN apk update    
