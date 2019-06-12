@@ -28,7 +28,7 @@
     "additional_ports_only" : false, // only works under multi-user mode
     "timeout": 480,
     "udp_timeout": 240,
-    "dns_ipv6": true,
+    "dns_ipv6": false,
     "connect_verbose_info": 1,
     "redirect": "cloudflare.com",
     "workers": 1,
