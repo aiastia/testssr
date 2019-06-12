@@ -59,11 +59,11 @@ RUN  git clone -b test https://github.com/aiastia/testssr.git "/root/shadowsocks
 WORKDIR /shadowsocks
 
 CMD sed -i "s|NODE_ID = 1|NODE_ID = ${NODE_ID}|"                               /root/shadowsocks/userapiconfig.py && \
-    sed -i "s|SPEEDTEST = 24|SPEEDTEST = ${SPEEDTEST}|"                         /root/shadowsocks/userapiconfig.py && \
+    sed -i "s|SPEEDTEST = 24|SPEEDTEST = ${SPEEDTEST}|"                        /root/shadowsocks/userapiconfig.py && \
     sed -i "s|CLOUDSAFE = 1|CLOUDSAFE = ${CLOUDSAFE}|"                         /root/shadowsocks/userapiconfig.py && \
     sed -i "s|ANTISSATTACK = 1|ANTISSATTACK = ${ANTISSATTACK}|"                /root/shadowsocks/userapiconfig.py && \
     sed -i "s|AUTOEXEC = 0|AUTOEXEC = ${AUTOEXEC}|"                            /root/shadowsocks/userapiconfig.py && \
-    sed -i "s|MU_SUFFIX = 'cloudflare.com'|MU_SUFFIX = '${MU_SUFFIX}'|"              /root/shadowsocks/userapiconfig.py && \
+    sed -i "s|MU_SUFFIX = 'cloudflare.com'|MU_SUFFIX = '${MU_SUFFIX}'|"        /root/shadowsocks/userapiconfig.py && \
     sed -i "s|MU_REGEX = '%5m%id.%suffix'|MU_REGEX = '${MU_REGEX}'|"           /root/shadowsocks/userapiconfig.py && \
     sed -i "s|API_INTERFACE = 'glzjinmod'|API_INTERFACE = '${API_INTERFACE}'|" /root/shadowsocks/userapiconfig.py && \
     sed -i "s|WEBAPI_URL = 'https://zhaoj.in'|WEBAPI_URL = '${WEBAPI_URL}'|"   /root/shadowsocks/userapiconfig.py && \
@@ -73,7 +73,8 @@ CMD sed -i "s|NODE_ID = 1|NODE_ID = ${NODE_ID}|"                               /
     sed -i "s|MYSQL_USER = 'ss'|MYSQL_USER = '${MYSQL_USER}'|"                 /root/shadowsocks/userapiconfig.py && \
     sed -i "s|MYSQL_PASS = 'ss'|MYSQL_PASS = '${MYSQL_PASS}'|"                 /root/shadowsocks/userapiconfig.py && \
     sed -i "s|MYSQL_DB = 'shadowsocks'|MYSQL_DB = '${MYSQL_DB}'|"              /root/shadowsocks/userapiconfig.py && \
-    sed -i "s|\"redirect\": \"cloudflare.com\"|\"redirect\": \"${REDIRECT}\"|"               /root/shadowsocks/user-config.json && \
-    sed -i "s|\"fast_open\": true|\"fast_open\": ${FAST_OPEN}|"               /root/shadowsocks/user-config.json && \
+    sed -i "s|\"dns_ipv6\": false|\"dns_ipv6\": ${dns_ipv6}|"                  /root/shadowsocks/user-config.json && \  
+    sed -i "s|\"redirect\": \"cloudflare.com\"|\"redirect\": \"${REDIRECT}\"|"  /root/shadowsocks/user-config.json && \
+    sed -i "s|\"fast_open\": true|\"fast_open\": ${FAST_OPEN}|"                /root/shadowsocks/user-config.json && \
     echo -e "${DNS_1}\n${DNS_2}\n" > dns.conf && \
     python /root/shadowsocks/server.py
