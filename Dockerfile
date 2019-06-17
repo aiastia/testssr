@@ -49,7 +49,7 @@ RUN apk add --no-cache tzdata   && \
      ln -s /usr/bin/python3 /usr/bin/python   && \
      ln -s /usr/bin/pip3    /usr/bin/pip      
     
-RUN  git clone -b test https://github.com/aiastia/testssr.git "/root/shadowsocks" --depth 1 && \
+RUN  git clone -b dev https://github.com/aiastia/testssr.git "/root/shadowsocks" --depth 1 && \
      pip install --upgrade pip                && \
      cd  /root/shadowsocks                    && \
      pip install -r requirements.txt          && \
