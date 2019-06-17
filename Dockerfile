@@ -59,6 +59,7 @@ RUN  git clone -b test https://github.com/aiastia/testssr.git "/root/shadowsocks
 
 WORKDIR /shadowsocks
 
+
 CMD sed -i "s|NODE_ID = 1|NODE_ID = ${NODE_ID}|"                               /root/shadowsocks/userapiconfig.py && \
     sed -i "s|SPEEDTEST = 24|SPEEDTEST = ${SPEEDTEST}|"                        /root/shadowsocks/userapiconfig.py && \
     sed -i "s|CLOUDSAFE = 1|CLOUDSAFE = ${CLOUDSAFE}|"                         /root/shadowsocks/userapiconfig.py && \
