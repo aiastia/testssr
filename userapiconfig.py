@@ -6,8 +6,8 @@ NODE_ID = 1
 SPEEDTEST = 24
 CLOUDSAFE = 1
 ANTISSATTACK = 1
-AUTOEXEC = 0
 MULTI_THREAD = 1
+AUTOEXEC = 0
 
 MU_SUFFIX = 'cloudflare.com'  # zhaoj.in
 MU_REGEX = '%5m%id.%suffix'  # zhaoj.in
