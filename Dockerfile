@@ -78,5 +78,7 @@ CMD sed -i "s|NODE_ID = 1|NODE_ID = ${NODE_ID}|"                               /
     sed -i "s|\"dns_ipv6\": false|\"dns_ipv6\": ${dns_ipv6}|"                  /root/shadowsocks/user-config.json && \  
     sed -i "s|\"redirect\": \"cloudflare.com\"|\"redirect\": \"${REDIRECT}\"|"  /root/shadowsocks/user-config.json && \
     sed -i "s|\"fast_open\": true|\"fast_open\": ${FAST_OPEN}|"                /root/shadowsocks/user-config.json && \
-    echo -e "${DNS_1}\n${DNS_2}\n" > dns.conf && \
+    sed -i "s|\"443\"|\" ${por}\"|"                                             /root/shadowsocks/user-config.json && \
+    sed -i "s|8.8.8.8|${DNS_1}|"                                                /root/shadowsocks/dns.conf&& \
+    sed -i "s|1.0.0.1|${DNS_2}|"                                               /root/shadowsocks/dns.conf && \
     python /root/shadowsocks/server.py
