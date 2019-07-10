@@ -23,7 +23,7 @@ ENV DNS_1=1.0.0.1                 \
     dns_ipv6=false                \
     FAST_OPEN=true
     
-RUN     
+
 RUN apk update && \
     apk add --no-cache tzdata   && \
     echo "Hongkong" > /etc/timezone && \ 
