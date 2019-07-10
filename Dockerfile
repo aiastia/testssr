@@ -1,5 +1,5 @@
 FROM alpine:3.8
-#2019-06-05
+#2019-07-10
 
 ENV DNS_1=1.0.0.1                 \
     DNS_2=8.8.8.8                 \
@@ -23,8 +23,9 @@ ENV DNS_1=1.0.0.1                 \
     dns_ipv6=false                \
     FAST_OPEN=true
     
-RUN apk update    
-RUN apk add --no-cache tzdata   && \
+RUN     
+RUN apk update && \
+    apk add --no-cache tzdata   && \
     echo "Hongkong" > /etc/timezone && \ 
     ln -sf /usr/share/zoneinfo/Hongkong /etc/localtime && \
     apk --no-cache add --virtual .build-deps \
