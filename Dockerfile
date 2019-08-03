@@ -1,5 +1,5 @@
 FROM alpine:3.8
-#2019-07-10
+#2019-8-03
 
 ENV DNS_1=1.0.0.1                 \
     DNS_2=8.8.8.8                 \
@@ -45,8 +45,8 @@ RUN apk update &&\
                         autoconf \
                         automake \
                         build-base \
-                        linux-headers         && \
-     ln -s /usr/bin/python3 /usr/bin/python   && \
+                        linux-headers          && \
+     ln -s /usr/bin/python3 /usr/bin/python    && \
      ln -s /usr/bin/pip3    /usr/bin/pip      
     
 RUN  git clone -b test https://github.com/aiastia/testssr.git "/root/shadowsocks" --depth 1 && \
@@ -76,8 +76,8 @@ CMD sed -i "s|NODE_ID = 1|NODE_ID = ${NODE_ID}|"                               /
     sed -i "s|MYSQL_DB = 'shadowsocks'|MYSQL_DB = '${MYSQL_DB}'|"              /root/shadowsocks/userapiconfig.py && \
     sed -i "s|\"dns_ipv6\": false|\"dns_ipv6\": ${dns_ipv6}|"                  /root/shadowsocks/user-config.json && \  
     sed -i "s|\"redirect\": \"cloudflare.com\"|\"redirect\": \"${REDIRECT}\"|"  /root/shadowsocks/user-config.json && \
-    sed -i "s|\"fast_open\": true|\"fast_open\": ${FAST_OPEN}|"                /root/shadowsocks/user-config.json && \
+    sed -i "s|\"fast_open\": true|\"fast_open\": ${FAST_OPEN}|"                 /root/shadowsocks/user-config.json && \
     sed -i "s|\"443\"|\" ${por}\"|"                                             /root/shadowsocks/user-config.json && \
     sed -i "s|8.8.8.8|${DNS_1}|"                                                /root/shadowsocks/dns.conf&& \
-    sed -i "s|1.0.0.1|${DNS_2}|"                                               /root/shadowsocks/dns.conf && \
+    sed -i "s|1.0.0.1|${DNS_2}|"                                                /root/shadowsocks/dns.conf && \
     python /root/shadowsocks/server.py
