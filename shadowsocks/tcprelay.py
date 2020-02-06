@@ -601,7 +601,7 @@ class TCPRelayHandler(object):
 
                 if has_higher_priority:
                     continue
-					
+
                 if self._relay_rules[id]['dist_ip'] == '0.0.0.0':
                     continue
 

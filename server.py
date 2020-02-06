@@ -15,31 +15,34 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import logging
+import time
+import sys
+import threading
 import os
+import logging
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     import inspect
-
     os.chdir(
         os.path.dirname(
-            os.path.realpath(inspect.getfile(inspect.currentframe()))
-        )
-    )
+            os.path.realpath(
+                inspect.getfile(
+                    inspect.currentframe()))))
 
+import server_pool
 import db_transfer
 import web_transfer
 import speedtest_thread
 import auto_thread
 import auto_block
-from multiprocessing import Process
 from shadowsocks import shell
-from configloader import get_config
+from configloader import load_config, get_config
 
 
-class MainThread(Process):
+class MainThread(threading.Thread):
+
     def __init__(self, obj):
-        Process.__init__(self)
+        threading.Thread.__init__(self)
         self.obj = obj
 
     def run(self):
@@ -50,45 +53,39 @@ class MainThread(Process):
 
 
 def main():
-    logging.basicConfig(
-        level=logging.INFO, format="%(levelname)-s: %(message)s"
-    )
+    logging.basicConfig(level=logging.INFO,
+                        format='%(levelname)-s: %(message)s')
 
     shell.check_python()
 
-    if get_config().API_INTERFACE == "modwebapi":
+    if get_config().API_INTERFACE == 'modwebapi':
         threadMain = MainThread(web_transfer.WebTransfer)
     else:
         threadMain = MainThread(db_transfer.DbTransfer)
     threadMain.start()
-    if get_config().SPEEDTEST != 0:
-        threadSpeedtest = MainThread(speedtest_thread.Speedtest)
-        threadSpeedtest.start()
-    if get_config().AUTOEXEC != 0:
-        threadAutoexec = MainThread(auto_thread.AutoExec)
-        threadAutoexec.start()
-    if get_config().CLOUDSAFE != 0 and get_config().ANTISSATTACK != 0:
-        threadAutoblock = MainThread(auto_block.AutoBlock)
-        threadAutoblock.start()
+
+    threadSpeedtest = MainThread(speedtest_thread.Speedtest)
+    threadSpeedtest.start()
+
+    threadAutoexec = MainThread(auto_thread.AutoExec)
+    threadAutoexec.start()
+
+    threadAutoblock = MainThread(auto_block.AutoBlock)
+    threadAutoblock.start()
 
     try:
         while threadMain.is_alive():
             threadMain.join(10.0)
-    except (KeyboardInterrupt, IOError, OSError):
+    except (KeyboardInterrupt, IOError, OSError) as e:
         import traceback
-
         traceback.print_exc()
         threadMain.stop()
-        if get_config().SPEEDTEST != 0:
-            if threadSpeedtest.is_alive():
-                threadSpeedtest.stop()
-        if get_config().AUTOEXEC != 0:
-            if threadAutoexec.is_alive():
-                threadAutoexec.stop()
-        if get_config().CLOUDSAFE != 0 and get_config().ANTISSATTACK != 0:
-            if threadAutoblock.is_alive():
-                threadAutoblock.stop()
+        if threadSpeedtest.is_alive():
+            threadSpeedtest.stop()
+        if threadAutoexec.is_alive():
+            threadAutoexec.stop()
+        if threadAutoblock.is_alive():
+            threadAutoblock.stop()
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
