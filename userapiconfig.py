@@ -6,6 +6,7 @@ SPEEDTEST = 24
 CLOUDSAFE = 1
 ANTISSATTACK = 1
 AUTOEXEC = 0
+#MULTI_THREAD = 1
 
 MU_SUFFIX = 'cloudflare.com'
 MU_REGEX = '%5m%id.%suffix'
@@ -44,3 +45,18 @@ MANAGE_PASS = 'ss233333333'
 MANAGE_BIND_IP = '127.0.0.1'
 # make sure this port is idle
 MANAGE_PORT = 23333
+
+# edit this file and server will auto reload
+
+# boolean, enable to print mysql query
+PRINT_MYSQL_QUERY = False
+
+# second
+MYSQL_PUSH_DURATION = 60
+
+"""
+get port offset by node->name
+HK 1 #9900
+then offset is 9900
+"""
+GET_PORT_OFFSET_BY_NODE_NAME = True
